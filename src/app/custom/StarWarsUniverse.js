@@ -50,7 +50,8 @@ export default class StarWarsUniverse {
         && (ship.passengers && ship.passengers !== 'n/a' && ship.passengers !== '0')) {
         const starship = new Starship(ship.name, ship.consumables, ship.passengers);
 
-        this.starships.push(starship);
+        // Using StarWarsUniverse.starships instead of this.starships because of what is said in the task requirements
+        StarWarsUniverse.starships.push(starship);
       }
     });
   }
@@ -60,6 +61,5 @@ export default class StarWarsUniverse {
     const starships = await this._createStarships(starshipCount);
 
     this._validateData(starships);
-    // console.log(starships);
   }
 }
